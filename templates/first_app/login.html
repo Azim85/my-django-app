@@ -1,0 +1,15 @@
+{% extends 'first_app/base.html' %}
+
+{% block content %}
+<h4>Login</h4>
+<form action="{% url 'first_app:login' %}" method="POST">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    {{form.as_p}}
+    <button type="submit">Save</button>
+</form>
+{% endblock content %}
